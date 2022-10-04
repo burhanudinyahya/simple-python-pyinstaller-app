@@ -1,5 +1,9 @@
 # simple-python-pyinstaller-app
 
+## purpose
+This repo dedicated to me & dicoding team for completing DevOps Engineer Class, [here we go](https://www.dicoding.com/academies/428)
+
+## detail
 This repository is for the
 [Build a Python app with PyInstaller](https://jenkins.io/doc/tutorials/build-a-python-app-with-pyinstaller/)
 tutorial in the [Jenkins User Documentation](https://jenkins.io/doc/).
