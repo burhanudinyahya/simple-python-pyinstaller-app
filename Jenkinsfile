@@ -13,10 +13,8 @@ node {
     }
     stage('Deploy') {
         withEnv(["IMAGE='cdrx/pyinstaller-linux:python2'"]) {
-            dir(path: env.BUILD_ID) {
-                sh "docker run --rm -v ${env.WORKSPACE}/sources:/src ${IMAGE} 'pyinstaller -F add2vals.py'"
-            }
-            archiveArtifacts "${env.BUILD_ID}/sources/dist/add2vals"
+            sh "docker run --rm -v ${env.WORKSPACE}/sources:/src ${IMAGE} 'pyinstaller -F add2vals.py'"
+            archiveArtifacts "sources/dist/add2vals"
             sh "docker run --rm -v ${env.WORKSPACE}/sources:/src ${IMAGE} 'rm -rf build dist'"
         }
     }
