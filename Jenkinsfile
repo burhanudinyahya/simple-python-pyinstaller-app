@@ -18,7 +18,7 @@ node {
         }
     }
     stage('Deploy') {
-        docker.image('cdrx/pyinstaller-linux:python2').inside {
+        docker.image('cdrx/pyinstaller-linux:python2').inside("""--entrypoint=''""") {
             try {
                 dir(path: env.BUILD_ID) { 
                     unstash(name: 'compiled-results') 
