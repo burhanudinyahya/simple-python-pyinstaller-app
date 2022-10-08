@@ -11,6 +11,9 @@ node {
             junit 'test-reports/results.xml'
         }
     }
+    stage('Manual Approval') {
+        input message: 'Lanjutkan ke tahap Deploy?'
+    }
     stage('Deploy') {
         withEnv(["IMAGE='cdrx/pyinstaller-linux:python2'"]) {
             sh "docker run --rm -v ${env.WORKSPACE}/sources:/src ${IMAGE} 'pyinstaller -F add2vals.py'"
