@@ -20,5 +20,6 @@ node {
             archiveArtifacts "sources/dist/add2vals"
             sh "docker run --rm -v ${env.WORKSPACE}/sources:/src ${IMAGE} 'rm -rf build dist'"
         }
+        sleep(time:1,unit:'MINUTES')
     }
 }
